@@ -84,18 +84,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#C++面试题</p>
-<p>##a.C++与C的差异</p>
-<p>#####1.C和C++中struct有什么区别<br>C没有Protection行为，不能定义函数，但可以有函数指针。<br>C++有Protection行为，默认是public(class默认private),可以定义函数。</p>
-<p>#####2.C++中的struct和class有什么区别?<br>struct可以class所有功能，本质上是一个东西,<br>struct成员和继承默认是public，<br>class成员和继承默认是private</p>
-<p>####3.如何判断一个程序是由C编译程序还是由C++编译程序编译的？<br>判断：检测宏<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#ifdef__cpluspluc</span><br><span class="line">cout&lt;&lt;&quot;C++&quot;;</span><br><span class="line">#else</span><br><span class="line">printf(&quot;C&quot;);</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure></p>
-<p>####4.C和C++有什么不同？</p>
-<p>####5.如何处理内存耗尽<br>判断指针是否为NULL，是则马上return语句终止函数<br>判断指针是否为NULL，是则马上用exit(1)终止程序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include big *p;</span><br><span class="line">p=new(std::nothrow) big[1000];</span><br></pre></td></tr></table></figure></p>
+        <h2 id="a-C-与C的差异"><a href="#a-C-与C的差异" class="headerlink" title="a.C++与C的差异"></a>a.C++与C的差异</h2><h5 id="1-C和C-中struct有什么区别"><a href="#1-C和C-中struct有什么区别" class="headerlink" title="1.C和C++中struct有什么区别"></a>1.C和C++中struct有什么区别</h5><p>C没有Protection行为，不能定义函数，但可以有函数指针。<br>C++有Protection行为，默认是public(class默认private),可以定义函数。</p>
+<h5 id="2-C-中的struct和class有什么区别"><a href="#2-C-中的struct和class有什么区别" class="headerlink" title="2.C++中的struct和class有什么区别?"></a>2.C++中的struct和class有什么区别?</h5><p>struct可以class所有功能，本质上是一个东西,<br>struct成员和继承默认是public，<br>class成员和继承默认是private</p>
+<h4 id="3-如何判断一个程序是由C编译程序还是由C-编译程序编译的？"><a href="#3-如何判断一个程序是由C编译程序还是由C-编译程序编译的？" class="headerlink" title="3.如何判断一个程序是由C编译程序还是由C++编译程序编译的？"></a>3.如何判断一个程序是由C编译程序还是由C++编译程序编译的？</h4><p>判断：检测宏<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#ifdef__cpluspluc</span><br><span class="line">cout&lt;&lt;&quot;C++&quot;;</span><br><span class="line">#else</span><br><span class="line">printf(&quot;C&quot;);</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure></p>
+<h4 id="4-C和C-有什么不同？"><a href="#4-C和C-有什么不同？" class="headerlink" title="4.C和C++有什么不同？"></a>4.C和C++有什么不同？</h4><h4 id="5-如何处理内存耗尽"><a href="#5-如何处理内存耗尽" class="headerlink" title="5.如何处理内存耗尽"></a>5.如何处理内存耗尽</h4><p>判断指针是否为NULL，是则马上return语句终止函数<br>判断指针是否为NULL，是则马上用exit(1)终止程序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include big *p;</span><br><span class="line">p=new(std::nothrow) big[1000];</span><br></pre></td></tr></table></figure></p>
 <hr>
-<p>##b</p>
-<p>####1.C++是不是类型安全的？<br>不是，两个不同类型的指针是可以强制转换的(用reinterpret cast)</p>
-<p>####2.const符号常量<br>如果const位于　<em>　的左侧，则const就是用来修饰指针所指向的变量，即指针指向为常量；<br>如果const位于　</em>　的右侧，则const就是修饰指针本身，即指针本身是常量。<br>(1)const char <em>p<br>p是一个指向const char的指针,p是可以改变指向的，但是p指向的值是不能改变的<br>(2)char const </em>p<br>p是一个指向const的char的普通指针<br>(3)char * const p的区别<br>p是一个指向char的const指针  </p>
-<p>####3.用C++写个程序，如何判断一个操作系统是16位、32位？不同sizeof()函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">int a=~0;</span><br><span class="line">if(a&gt;65535)</span><br><span class="line">&#123;</span><br><span class="line">    cout&lt;&lt;&quot;32bit&quot;&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">    cout&lt;&lt;&quot;16bit&quot;&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="b"><a href="#b" class="headerlink" title="b"></a>b</h2><h4 id="1-C-是不是类型安全的？"><a href="#1-C-是不是类型安全的？" class="headerlink" title="1.C++是不是类型安全的？"></a>1.C++是不是类型安全的？</h4><p>不是，两个不同类型的指针是可以强制转换的(用reinterpret cast)</p>
+<h4 id="2-const符号常量"><a href="#2-const符号常量" class="headerlink" title="2.const符号常量"></a>2.const符号常量</h4><p>如果const位于*的左侧，则const就是用来修饰指针所指向的变量，即指针指向为常量；<br>如果const位于*的右侧，则const就是修饰指针本身，即指针本身是常量。<br>(1)const char <em>p<br>p是一个指向const char的指针,p是可以改变指向的，但是p指向的值是不能改变的<br>(2)char const </em>p<br>p是一个指向const的char的普通指针<br>(3)char * const p的区别<br>p是一个指向char的const指针  </p>
+<h4 id="3-用C-写个程序，如何判断一个操作系统是16位、32位？不同sizeof-函数"><a href="#3-用C-写个程序，如何判断一个操作系统是16位、32位？不同sizeof-函数" class="headerlink" title="3.用C++写个程序，如何判断一个操作系统是16位、32位？不同sizeof()函数"></a>3.用C++写个程序，如何判断一个操作系统是16位、32位？不同sizeof()函数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">int a=~0;</span><br><span class="line">if(a&gt;65535)</span><br><span class="line">&#123;</span><br><span class="line">    cout&lt;&lt;&quot;32bit&quot;&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">    cout&lt;&lt;&quot;16bit&quot;&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <ol>
 <li>asasa</li>
@@ -132,7 +128,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/11/C-面试题/" data-id="cjuc2mn110000y4qcfui4abl9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/11/C-面试题/" data-id="cjuc683hk0000toqc7og1olyp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -177,7 +173,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/11/hello-world/" data-id="cjuc2mn180001y4qcbegp3jho" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/11/hello-world/" data-id="cjuc683hu0001toqcqwlvnm5h" class="article-share-link">Share</a>
       
       
     </footer>
