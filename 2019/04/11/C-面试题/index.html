@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Rookie">
 <meta property="og:description" content="关于面试C++后台开发的常见问题">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-11T10:34:02.540Z">
+<meta property="og:updated_time" content="2019-04-12T06:26:44.743Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++面试题">
 <meta name="twitter:description" content="关于面试C++后台开发的常见问题">
@@ -99,6 +99,8 @@
 <h2 id="b"><a href="#b" class="headerlink" title="b"></a>b</h2><h4 id="1-C-是不是类型安全的？"><a href="#1-C-是不是类型安全的？" class="headerlink" title="1.C++是不是类型安全的？"></a>1.C++是不是类型安全的？</h4><p>不是，两个不同类型的指针是可以强制转换的(用reinterpret cast)</p>
 <h4 id="2-const符号常量"><a href="#2-const符号常量" class="headerlink" title="2.const符号常量"></a>2.const符号常量</h4><p>如果const位于*的左侧，则const就是用来修饰指针所指向的变量，即指针指向为常量；<br>如果const位于*的右侧，则const就是修饰指针本身，即指针本身是常量。<br>(1)const char <em>p<br>p是一个指向const char的指针,p是可以改变指向的，但是p指向的值是不能改变的<br>(2)char const </em>p<br>p是一个指向const的char的普通指针<br>(3)char * const p的区别<br>p是一个指向char的const指针  </p>
 <h4 id="3-用C-写个程序，如何判断一个操作系统是16位、32位？不同sizeof-函数"><a href="#3-用C-写个程序，如何判断一个操作系统是16位、32位？不同sizeof-函数" class="headerlink" title="3.用C++写个程序，如何判断一个操作系统是16位、32位？不同sizeof()函数"></a>3.用C++写个程序，如何判断一个操作系统是16位、32位？不同sizeof()函数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">int a=~0;</span><br><span class="line">if(a&gt;65535)</span><br><span class="line">&#123;</span><br><span class="line">    cout&lt;&lt;&quot;32bit&quot;&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">    cout&lt;&lt;&quot;16bit&quot;&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-内存分配的方式有几种？"><a href="#4-内存分配的方式有几种？" class="headerlink" title="4.内存分配的方式有几种？"></a>4.内存分配的方式有几种？</h4><p>1.静态存储区域<br>内存在程序编译的时候就已经分配好，这块内存在程序的整个运行期间都存在。例：全局变量<br>2.栈上创建<br>在执行函数时，函数内部局部变量的存储单元都可以在栈上创建，函数执行结束时这些存储单元自动被释放。<br>栈内存分配运算内置于处理器的指令集中，效率很高，但是分配的内存容量有限.<br>3.堆上动态内存分配  </p>
+<p>4.代码区</p>
 <hr>
 <ol>
 <li>asasa</li>
@@ -135,7 +137,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/11/C-面试题/" data-id="cjuci9a84000124qclo70m440" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/11/C-面试题/" data-id="cjudovlhw0000c8qcfdsp3n6f" class="article-share-link">Share</a>
       
       
     </footer>
